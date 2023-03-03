@@ -111,7 +111,8 @@ class _OtpSendScreenState extends State<OtpSendScreen> {
                               
                     ]),
                   ),
-                ),SizedBox(height: 10,),
+                ),
+                SizedBox(height: 10,),
                  Align(
                   alignment: Alignment.center,
                   child: Text.rich(

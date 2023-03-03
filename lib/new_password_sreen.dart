@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:tiny_cloud_app/account_create_screen.dart';
 import 'package:tiny_cloud_app/home_page.dart';
 import 'package:tiny_cloud_app/otp_send_screen.dart';
 
 class NewPasswordSreen extends StatefulWidget {
-  const NewPasswordSreen({ Key? key }) : super(key: key);
+  const NewPasswordSreen({Key? key}) : super(key: key);
 
   @override
   _NewPasswordSreenState createState() => _NewPasswordSreenState();
 }
 
 class _NewPasswordSreenState extends State<NewPasswordSreen> {
-  
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-backgroundColor:Colors.white ,
-body: Stack(
+      backgroundColor: Colors.white,
+      body: Stack(
         children: [
           Opacity(
             opacity: 0.5,
@@ -89,7 +89,7 @@ body: Stack(
                           borderRadius: BorderRadius.circular(35)),
                       contentPadding: EdgeInsets.symmetric(vertical: 5.0)),
                 ),
-                 const SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 Padding(
@@ -119,7 +119,7 @@ body: Stack(
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => OtpSendScreen()),
+                            builder: (context) => AccountCreateScreen()),
                       );
                     },
                     style: ButtonStyle(
@@ -144,6 +144,5 @@ body: Stack(
         ],
       ),
     );
-
   }
 }
