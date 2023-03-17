@@ -17,37 +17,37 @@ class _NewPasswordSreenState extends State<NewPasswordSreen> {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          Opacity(
-            opacity: 0.5,
-            child: ClipPath(
-              clipper: WaveClipper(),
-              child: Container(
-                color: Colors.purpleAccent,
-                height: 250,
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            Opacity(
+              opacity: 0.5,
+              child: ClipPath(
+                clipper: WaveClipper(),
+                child: Container(
+                  color: Colors.purpleAccent,
+                  height: 250,
+                ),
               ),
             ),
-          ),
-          Column(
-            children: [
-              SizedBox(
-                height: 60,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 50),
-                child: Positioned(
-                    top: height * .5,
-                    left: width * .3,
-                    child: Container(
-                        height: height * .4,
-                        width: width * .4,
-                        child: Image.asset('images/splashcloud.png'))),
-              ),
-            ],
-          ),
-          SingleChildScrollView(
-            child: Container(
+            Column(
+              children: [
+                SizedBox(
+                  height: 60,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50),
+                  child: Positioned(
+                      top: height * .5,
+                      left: width * .3,
+                      child: Container(
+                          height: height * .4,
+                          width: width * .4,
+                          child: Image.asset('images/splashcloud.png'))),
+                ),
+              ],
+            ),
+            Container(
               padding: EdgeInsets.only(
                   top: MediaQuery.of(context).size.height * .4,
                   right: 35,
@@ -140,8 +140,8 @@ class _NewPasswordSreenState extends State<NewPasswordSreen> {
                     ))
               ]),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tiny_cloud_app/account_create_screen.dart';
+import 'package:tiny_cloud_app/activities/check_in_screen.dart';
+import 'package:tiny_cloud_app/forget_password_screen.dart';
 import 'package:tiny_cloud_app/home_page.dart';
 import 'package:tiny_cloud_app/new_password_sreen.dart';
 import 'package:tiny_cloud_app/otp_send_screen.dart';
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
       
         primarySwatch: Colors.blue,
       ),
-      home:  TermsConditiondsScreen(),
+      home:  CheckInScreen(),
     );
   }
 }

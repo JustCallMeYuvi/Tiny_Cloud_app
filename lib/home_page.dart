@@ -17,152 +17,154 @@ class _HomePageState extends State<HomePage> {
     TextEditingController passwordController = TextEditingController();
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          Opacity(
-            opacity: 0.5,
-            child: ClipPath(
-              clipper: WaveClipper(),
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            Opacity(
+              opacity: 0.5,
+              child: ClipPath(
+                clipper: WaveClipper(),
+                child: Container(
+                  color: Colors.purpleAccent,
+                  height: 250,
+                ),
+              ),
+            ),
+            Column(
+              children: [
+                SizedBox(
+                  height: 60,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50),
+                  child: Positioned(
+                      top: height * .5,
+                      left: width * .3,
+                      child: Container(
+                          height: height * .4,
+                          width: width * .4,
+                          child: Image.asset('images/splashcloud.png'))),
+                ),
+              ],
+            ),
+            SingleChildScrollView(
               child: Container(
-                color: Colors.purpleAccent,
-                height: 250,
-              ),
-            ),
-          ),
-          Column(
-            children: [
-              SizedBox(
-                height: 60,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 50),
-                child: Positioned(
-                    top: height * .5,
-                    left: width * .3,
-                    child: Container(
-                        height: height * .4,
-                        width: width * .4,
-                        child: Image.asset('images/splashcloud.png'))),
-              ),
-            ],
-          ),
-          SingleChildScrollView(
-            child: Container(
-              padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height * .4,
-                  right: 35,
-                  left: 35),
-              child: Column(children: [
-                const SizedBox(
-                  height: 30,
-                ),
-                Text(
-                  'LOGIN',
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(
-                  height: 50,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 270),
-                  child: Text(
-                    'Email',
-                    style: TextStyle(fontSize: 18),
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * .4,
+                    right: 35,
+                    left: 35),
+                child: Column(children: [
+                  const SizedBox(
+                    height: 30,
                   ),
-                ),
-                SizedBox(
-                  height: 05,
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(35)),
-                      contentPadding: EdgeInsets.symmetric(vertical: 5.0)),
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 240),
-                  child: Text(
-                    'Password',
-                    style: TextStyle(fontSize: 18),
+                  Text(
+                    'LOGIN',
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
-                ),
-                SizedBox(
-                  height: 05,
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(35),
-                    ),
-                    contentPadding: EdgeInsets.symmetric(vertical: 5.0),
+                  const SizedBox(
+                    height: 50,
                   ),
-                ),
-                SizedBox(height: 30),
-                Text(
-                  'Forget password?',
-                  style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black45),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: Text.rich(
-                    TextSpan(children: [
-                      TextSpan(
-                          text: 'No accounts?',
-                          style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.black38,
-                              fontWeight: FontWeight.bold)),
-                      TextSpan(
-                          text: 'Sign Up',
-                          style: TextStyle(
-                              decoration: TextDecoration.underline,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold)),
-                    ]),
-                  ),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                ElevatedButton(
-                    onPressed: () {
-                      {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ForgetPassWordScreen()),
-                        );
-                      }
-                    },
-                    style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(
-                          Size(160, 40)), // set minimum width and height
-                      padding: MaterialStateProperty.all(EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10)), // set padding
-                      backgroundColor: MaterialStateProperty.all(
-                          Colors.blue), // set background color
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(10))), // set border radius
-                    ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 270),
                     child: Text(
-                      'LOGIN',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ))
-              ]),
+                      'Email',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 05,
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(35)),
+                        contentPadding: EdgeInsets.symmetric(vertical: 5.0)),
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 240),
+                    child: Text(
+                      'Password',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 05,
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(35),
+                      ),
+                      contentPadding: EdgeInsets.symmetric(vertical: 5.0),
+                    ),
+                  ),
+                  SizedBox(height: 30),
+                  Text(
+                    'Forget password?',
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black45),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text.rich(
+                      TextSpan(children: [
+                        TextSpan(
+                            text: 'No accounts?',
+                            style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.black38,
+                                fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text: 'Sign Up',
+                            style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold)),
+                      ]),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ForgetPassWordScreen()),
+                          );
+                        }
+                      },
+                      style: ButtonStyle(
+                        minimumSize: MaterialStateProperty.all(
+                            Size(160, 40)), // set minimum width and height
+                        padding: MaterialStateProperty.all(EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10)), // set padding
+                        backgroundColor: MaterialStateProperty.all(
+                            Colors.blue), // set background color
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(10))), // set border radius
+                      ),
+                      child: Text(
+                        'LOGIN',
+                        style:
+                            TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      ))
+                ]),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
